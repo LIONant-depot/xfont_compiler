@@ -348,3 +348,6 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/dependencies
+/Build/xfont_compiler.vs2019/ResourcePipeline.config
+/Build/xfont_compiler.vs2019/ResourceDesc.txt

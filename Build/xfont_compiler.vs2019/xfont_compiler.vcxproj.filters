@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Settings">
+      <UniqueIdentifier>{aaf3701f-98d9-400b-8ab6-b7ea94843c74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies">
+      <UniqueIdentifier>{7016f5e7-f81c-4ba0-90a1-a0eb52908f1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies\xcore">
+      <UniqueIdentifier>{55d4ce7c-0c02-4c67-97c4-98316cec1507}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies\msdfgen">
+      <UniqueIdentifier>{6e892d31-3ea0-48e7-9884-9b9500975be8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies\xresource_pipeline">
+      <UniqueIdentifier>{b91e36cb-c512-40ca-be3d-d1f1249fe128}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies\freetype">
+      <UniqueIdentifier>{3a89d78a-96a6-4e96-9330-e1e3609177a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{30297d29-cc07-40be-a9c4-c2481667d746}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime">
+      <UniqueIdentifier>{4039caaf-5bee-47a4-bba5-57a62afd1819}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Details">
+      <UniqueIdentifier>{33fc2dc7-ab81-463f-8cd0-fb8de766f700}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies\msdfgen\core">
+      <UniqueIdentifier>{c1f47c81-c715-4c30-985e-e25207f8c557}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies\msdfgen\Ext">
+      <UniqueIdentifier>{ca2c8ad7-b064-41f5-92e6-0b50d4171175}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies\msdfgen\Lib">
+      <UniqueIdentifier>{b42ca3e5-3cc3-4104-8431-338664574a07}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\dependencies\xcore\src\xcore.cpp">
+      <Filter>Dependencies\xcore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\xcore\src\xcore_profiler_1.cpp">
+      <Filter>Dependencies\xcore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\xcore\src\xcore_profiler_2.cpp">
+      <Filter>Dependencies\xcore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_compiler_base.cpp">
+      <Filter>Dependencies\xresource_pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="..\..\src\xfont_compiler.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Details\xfont_compiler_instance.cpp">
+      <Filter>Source\Details</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\msdfgen\core\Contour.cpp">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\msdfgen\core\contour-combiners.cpp">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\msdfgen\core\edge-coloring.cpp">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\msdfgen\core\EdgeHolder.cpp">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\msdfgen\core\edge-segments.cpp">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\msdfgen\core\edge-selectors.cpp">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\msdfgen\core\equation-solver.cpp">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\msdfgen\core\msdf-error-correction.cpp">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\msdfgen\core\MSDFErrorCorrection.cpp">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\msdfgen\core\msdfgen.cpp">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\msdfgen\core\Projection.cpp">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\msdfgen\core\rasterization.cpp">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\msdfgen\core\render-sdf.cpp">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\msdfgen\core\save-bmp.cpp">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\msdfgen\core\save-tiff.cpp">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\msdfgen\core\Scanline.cpp">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\msdfgen\core\sdf-error-estimation.cpp">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\msdfgen\core\Shape.cpp">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\msdfgen\core\shape-description.cpp">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\msdfgen\core\SignedDistance.cpp">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\msdfgen\core\Vector2.cpp">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\msdfgen\ext\import-font.cpp">
+      <Filter>Dependencies\msdfgen\Ext</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\msdfgen\ext\import-svg.cpp">
+      <Filter>Dependencies\msdfgen\Ext</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\msdfgen\ext\resolve-shape-geometry.cpp">
+      <Filter>Dependencies\msdfgen\Ext</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\msdfgen\ext\save-png.cpp">
+      <Filter>Dependencies\msdfgen\Ext</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\msdfgen\lib\lodepng.cpp">
+      <Filter>Dependencies\msdfgen\Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\msdfgen\lib\tinyxml2.cpp">
+      <Filter>Dependencies\msdfgen\Lib</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_arglist.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_array.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_assert.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_bitmap.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_bits.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_cmdline.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_color.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_compression.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_context.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_crc.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_endian.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_error.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_event.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_file.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_function.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_global.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_guid.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_lock.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_lockless_pool.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_lockless_queues.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_log.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_math.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_math_matrix4.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_math_quaternion.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_math_radian3.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_math_shapes.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_math_transform.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_math_vector2.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_math_vector3.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_math_vector4.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_memory.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_profiler.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_ptr.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_random.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_rtti.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_scheduler_channel.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_scheduler_job.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_scheduler_system.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_scheduler_trigger.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_serializer.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_span.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_string.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_system_reg.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_target.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_textfile.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_types.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_unique_span.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_units.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xcore\src\xcore_vector.h">
+      <Filter>Dependencies\xcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline.h">
+      <Filter>Dependencies\xresource_pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_compiler_base.h">
+      <Filter>Dependencies\xresource_pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_config.h">
+      <Filter>Dependencies\xresource_pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_descriptor_base.h">
+      <Filter>Dependencies\xresource_pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_key_base.h">
+      <Filter>Dependencies\xresource_pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_tag.h">
+      <Filter>Dependencies\xresource_pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\freetype\include\ft2build.h">
+      <Filter>Dependencies\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\xfont_compiler.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\xfont_compiler_descriptor.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\xfont_compiler_instance.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Settings\PropertyConfig.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="Settings\xcore_user_settings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\core\arithmetics.hpp">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\core\Bitmap.h">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\core\Bitmap.hpp">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\core\bitmap-interpolation.hpp">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\core\BitmapRef.hpp">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\core\Contour.h">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\core\contour-combiners.h">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\core\EdgeColor.h">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\core\edge-coloring.h">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\core\EdgeHolder.h">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\core\edge-segments.h">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\core\edge-selectors.h">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\core\equation-solver.h">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\core\generator-config.h">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\core\msdf-error-correction.h">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\core\MSDFErrorCorrection.h">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\core\pixel-conversion.hpp">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\core\Projection.h">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\core\rasterization.h">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\core\render-sdf.h">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\core\save-bmp.h">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\core\save-tiff.h">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\core\Scanline.h">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\core\sdf-error-estimation.h">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\core\Shape.h">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\core\shape-description.h">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\core\ShapeDistanceFinder.h">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\core\ShapeDistanceFinder.hpp">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\core\SignedDistance.h">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\core\Vector2.h">
+      <Filter>Dependencies\msdfgen\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\ext\import-font.h">
+      <Filter>Dependencies\msdfgen\Ext</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\ext\import-svg.h">
+      <Filter>Dependencies\msdfgen\Ext</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\ext\resolve-shape-geometry.h">
+      <Filter>Dependencies\msdfgen\Ext</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\msdfgen\ext\save-png.h">
+      <Filter>Dependencies\msdfgen\Ext</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
