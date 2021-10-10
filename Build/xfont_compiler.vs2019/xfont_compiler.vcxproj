@@ -114,10 +114,15 @@
     <ClCompile Include="..\..\dependencies\msdfgen\ext\save-png.cpp" />
     <ClCompile Include="..\..\dependencies\msdfgen\lib\lodepng.cpp" />
     <ClCompile Include="..\..\dependencies\msdfgen\lib\tinyxml2.cpp" />
+    <ClCompile Include="..\..\dependencies\xbmp_tools\src\xbmp_tools.cpp" />
     <ClCompile Include="..\..\dependencies\xcore\src\xcore.cpp" />
     <ClCompile Include="..\..\dependencies\xcore\src\xcore_profiler_1.cpp" />
     <ClCompile Include="..\..\dependencies\xcore\src\xcore_profiler_2.cpp" />
     <ClCompile Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_compiler_base.cpp" />
+    <ClCompile Include="..\..\src\Details\xfont_PerfectHashing.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\src\Details\xfont_compiler_instance.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
@@ -161,6 +166,10 @@
     <ClInclude Include="..\..\dependencies\msdfgen\ext\resolve-shape-geometry.h" />
     <ClInclude Include="..\..\dependencies\msdfgen\ext\save-png.h" />
     <ClInclude Include="..\..\dependencies\msdfgen\freetype\include\ft2build.h" />
+    <ClInclude Include="..\..\dependencies\xbmp_tools\src\xbmp_tools.h" />
+    <ClInclude Include="..\..\dependencies\xbmp_tools\src\xbmp_tools_atlas.h" />
+    <ClInclude Include="..\..\dependencies\xbmp_tools\src\xbmp_tools_loaders.h" />
+    <ClInclude Include="..\..\dependencies\xbmp_tools\src\xbmp_tools_writers.h" />
     <ClInclude Include="..\..\dependencies\xcore\src\xcore.h" />
     <ClInclude Include="..\..\dependencies\xcore\src\xcore_arglist.h" />
     <ClInclude Include="..\..\dependencies\xcore\src\xcore_array.h" />
@@ -217,9 +226,14 @@
     <ClInclude Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_descriptor_base.h" />
     <ClInclude Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_key_base.h" />
     <ClInclude Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_tag.h" />
+    <ClInclude Include="..\..\src\Details\xfont_PerfectHashing.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="..\..\src\xfont_compiler.h" />
     <ClInclude Include="..\..\src\xfont_compiler_descriptor.h" />
     <ClInclude Include="..\..\src\xfont_compiler_instance.h" />
+    <ClInclude Include="..\..\src_runtime\xfont.h" />
     <ClInclude Include="Settings\PropertyConfig.h" />
     <ClInclude Include="Settings\xcore_user_settings.h" />
   </ItemGroup>

@@ -37,6 +37,9 @@
     <Filter Include="Dependencies\msdfgen\Lib">
       <UniqueIdentifier>{b42ca3e5-3cc3-4104-8431-338664574a07}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Dependencies\xbmp_tools">
+      <UniqueIdentifier>{d40c2775-4f81-4161-98ae-f6c764af1e0c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\dependencies\xcore\src\xcore.cpp">
@@ -138,6 +141,12 @@
     </ClCompile>
     <ClCompile Include="..\..\dependencies\msdfgen\lib\tinyxml2.cpp">
       <Filter>Dependencies\msdfgen\Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dependencies\xbmp_tools\src\xbmp_tools.cpp">
+      <Filter>Dependencies\xbmp_tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Details\xfont_PerfectHashing.cpp">
+      <Filter>Source\Details</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -428,6 +437,24 @@
     </ClInclude>
     <ClInclude Include="..\..\dependencies\msdfgen\ext\save-png.h">
       <Filter>Dependencies\msdfgen\Ext</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xbmp_tools\src\xbmp_tools.h">
+      <Filter>Dependencies\xbmp_tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xbmp_tools\src\xbmp_tools_atlas.h">
+      <Filter>Dependencies\xbmp_tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xbmp_tools\src\xbmp_tools_loaders.h">
+      <Filter>Dependencies\xbmp_tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xbmp_tools\src\xbmp_tools_writers.h">
+      <Filter>Dependencies\xbmp_tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_runtime\xfont.h">
+      <Filter>Runtime</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Details\xfont_PerfectHashing.h">
+      <Filter>Source\Details</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

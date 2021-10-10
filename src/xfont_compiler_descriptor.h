@@ -122,9 +122,10 @@ namespace xfont_compiler
 
                 xcore::cstring Type = descriptor::type_v[(int) Options.m_Generation.m_Type ];
 
+                (void)Stream.Field("BlurSize", Options.m_Generation.m_BLurSize);
+
                 0
                 || (Err = Stream.Field("BorderSize",            Options.m_Generation.m_BorderSize))
-                || (Err = Stream.Field("BlurSize",              Options.m_Generation.m_BLurSize))
                 || (Err = Stream.Field("Type",                  Type  ))
                 ;
 
