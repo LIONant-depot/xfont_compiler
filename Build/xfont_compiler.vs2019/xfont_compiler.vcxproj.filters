@@ -468,5 +468,8 @@
     <ClInclude Include="..\..\dependencies\xtexture_compiler\src\xtexture_compiler_instance.h">
       <Filter>Dependencies\xtexture_compiler</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_dependencies.h">
+      <Filter>Dependencies\xresource_pipeline</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

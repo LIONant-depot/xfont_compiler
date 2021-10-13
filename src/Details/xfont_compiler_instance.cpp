@@ -25,13 +25,15 @@ struct implementation : instance
 
     //---------------------------------------------------------------------------------------------
 
-    virtual void LoadFont(const xcore::cstring& AssetPath, const descriptor& Descriptor) override
+    virtual void LoadFont( xcore::vector<xcore::cstring>& AssetDependencies, const xcore::cstring& AssetPath, const descriptor& Descriptor) override
     {
         //
         // Read the font with the file
         //
         if( false == Descriptor.m_Source.m_Font.m_SourcePath.empty() )
         {
+            xcore::string::Copy( AssetDependencies.append(), Descriptor.m_Source.m_Font.m_SourcePath );
+
             m_pFont = loadFont(m_pFreeType, xcore::string::Fmt( "%s/%s", AssetPath.data(), Descriptor.m_Source.m_Font.m_SourcePath.data() ) );
             if(m_pFont == nullptr )
                 throw( std::runtime_error( "Failed to load the font") );
@@ -40,7 +42,9 @@ struct implementation : instance
             {
                 xcore::file::stream File;
 
-                if( auto Err = File.open( xcore::string::To<wchar_t>(xcore::string::Fmt("%s/%s", AssetPath.data(), Descriptor.m_Source.m_Font.m_SourcePath.data())), "rb" ); Err )
+                xcore::string::Copy(AssetDependencies.append(), Descriptor.m_Source.m_Font.m_UnicodeTxtFilePath );
+
+                if( auto Err = File.open( xcore::string::To<wchar_t>(xcore::string::Fmt("%s/%s", AssetPath.data(), Descriptor.m_Source.m_Font.m_UnicodeTxtFilePath.data())), "rb" ); Err )
                     throw(std::runtime_error("Failed to open the unicode textfile for the given font"));
 
 
@@ -597,12 +601,12 @@ struct implementation : instance
 
     //---------------------------------------------------------------------------------------------
 
-    virtual void SerializeAtlas(const std::string_view PathToTheVirtualResourceAtlas) override
+    virtual void SerializeAtlas(const std::string_view PathToTheVirtualResourceAtlas, const std::string_view FileName) override
     {
         //
         // Save the atlast
         //
-        if( auto Err = m_AtlasTexture.SaveTGA( xcore::string::To<wchar_t>(xcore::string::Fmt("%s/Atlas.tga", PathToTheVirtualResourceAtlas.data() )) ); Err )
+        if( auto Err = m_AtlasTexture.SaveTGA( xcore::string::To<wchar_t>(xcore::string::Fmt("%s/%s", PathToTheVirtualResourceAtlas.data(), FileName.data() )) ); Err )
             return throw(std::runtime_error("Unable to save the atlas"));
     }
 

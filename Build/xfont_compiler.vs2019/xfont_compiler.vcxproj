@@ -220,6 +220,7 @@
     <ClInclude Include="..\..\dependencies\xcore\src\xcore_unique_span.h" />
     <ClInclude Include="..\..\dependencies\xcore\src\xcore_units.h" />
     <ClInclude Include="..\..\dependencies\xcore\src\xcore_vector.h" />
+    <ClInclude Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_dependencies.h" />
     <ClInclude Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline.h" />
     <ClInclude Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_compiler_base.h" />
     <ClInclude Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_config.h" />

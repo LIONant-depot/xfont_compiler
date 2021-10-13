@@ -6,6 +6,8 @@
 
 struct font_pipeline_compiler : xresource_pipeline::compiler::base
 {
+    using parent = xresource_pipeline::compiler::base;
+
     virtual xcore::guid::rcfull<> getResourcePipelineFullGuid() const noexcept override
     {
         return xfont_compiler::full_guid_v;
@@ -16,7 +18,8 @@ struct font_pipeline_compiler : xresource_pipeline::compiler::base
         if (auto Err = xfont_compiler::descriptor::Serialize(m_CompilerOptions, m_ResourceDescriptorPathFile.data(), true); Err)
             return Err;
 
-        m_Compiler->LoadFont(m_AssetsRootPath, m_CompilerOptions);
+
+        m_Compiler->LoadFont( parent::m_Dependencies.m_Assets, m_AssetsRootPath, m_CompilerOptions );
 
         //
         // Create the atlas resource GUID
@@ -36,17 +39,20 @@ struct font_pipeline_compiler : xresource_pipeline::compiler::base
         // Save Atlas
         //
         {
+            constexpr static auto atlas_path_filename_v = xcore::string::constant("Atlas.tga");
+
             xcore::cstring VirtualPath;
             if (auto Err = CreateVirtualResourcePath(VirtualPath, AtlastResourceGuid); Err)
                 return Err;
-            m_Compiler->SerializeAtlas(VirtualPath.data());
+
+            m_Compiler->SerializeAtlas( VirtualPath.data(), atlas_path_filename_v.data() );
 
             //
             // Save the descriptor
             //
             xtexture_compiler::descriptor Descriptor;
 
-            xcore::string::Copy(Descriptor.m_Source.m_lPaths.append().m_Color, "Atlas.tga");
+            xcore::string::Copy(Descriptor.m_Source.m_lPaths.append().m_Color, atlas_path_filename_v);
 
             Descriptor.m_Source.m_LinearSpace = true;
             Descriptor.m_Source.m_Type = xtexture_compiler::descriptor::type::COLOR;
@@ -57,6 +63,12 @@ struct font_pipeline_compiler : xresource_pipeline::compiler::base
 
             if (auto Err = xtexture_compiler::descriptor::Serialize(Descriptor, xcore::string::Fmt("%s/%s", VirtualPath.data(), xresource_pipeline::resource_descriptor_name_v.data()).data(), false); Err)
                 return Err;
+
+            //
+            // Handle virtual dependencies
+            //
+            xcore::string::Copy(parent::m_Dependencies.m_VirtualAssets.append(), atlas_path_filename_v );
+            parent::m_Dependencies.m_VirtualResources.append() = AtlastResourceGuid;
         }
 
         //
@@ -66,6 +78,13 @@ struct font_pipeline_compiler : xresource_pipeline::compiler::base
         {
             if (T.m_bValid) m_Compiler->Serialize( T.m_DataPath.data() );
         }
+
+        //
+        // Save dependencies
+        //
+        {
+        }
+        
 
         return {};
     }
