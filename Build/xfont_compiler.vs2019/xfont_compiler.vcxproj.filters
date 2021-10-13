@@ -40,6 +40,9 @@
     <Filter Include="Dependencies\xbmp_tools">
       <UniqueIdentifier>{d40c2775-4f81-4161-98ae-f6c764af1e0c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Dependencies\xtexture_compiler">
+      <UniqueIdentifier>{3f1624dc-30ce-4841-92c7-941466097934}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\dependencies\xcore\src\xcore.cpp">
@@ -455,6 +458,15 @@
     </ClInclude>
     <ClInclude Include="..\..\src\Details\xfont_PerfectHashing.h">
       <Filter>Source\Details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xtexture_compiler\src\xtexture_compiler.h">
+      <Filter>Dependencies\xtexture_compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xtexture_compiler\src\xtexture_compiler_descriptor.h">
+      <Filter>Dependencies\xtexture_compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dependencies\xtexture_compiler\src\xtexture_compiler_instance.h">
+      <Filter>Dependencies\xtexture_compiler</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

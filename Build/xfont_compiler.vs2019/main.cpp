@@ -1,18 +1,14 @@
 
 #include "../../src/xfont_compiler.h"
+#include "../../dependencies/xtexture_compiler/src/xtexture_compiler.h"
 
 //---------------------------------------------------------------------------------
 
 struct font_pipeline_compiler : xresource_pipeline::compiler::base
 {
-    static constexpr xcore::guid::rcfull<> full_guid_v
-    { .m_Type = xcore::guid::rctype<>         { "resource.pipeline", "plugin" }
-    , .m_Instance = xcore::guid::rcinstance<> { "xfont" }
-    };
-
     virtual xcore::guid::rcfull<> getResourcePipelineFullGuid() const noexcept override
     {
-        return full_guid_v;
+        return xfont_compiler::full_guid_v;
     }
 
     virtual xcore::err onCompile(void) noexcept override
@@ -21,13 +17,54 @@ struct font_pipeline_compiler : xresource_pipeline::compiler::base
             return Err;
 
         m_Compiler->LoadFont(m_AssetsRootPath, m_CompilerOptions);
-        m_Compiler->Compile(m_CompilerOptions
-            , xresource_pipeline::compiler::base::m_OptimizationType
+
+        //
+        // Create the atlas resource GUID
+        //
+        const auto AtlastResourceGuid = xcore::guid::rcfull<>{ xcore::guid::rcfull<>::rctype_t{{ xtexture_compiler::full_guid_v.m_Instance.m_Value}}, xcore::guid::rcfull<>::rcinstance_t{m_RscGuid.m_Instance.m_Value }};
+
+        //
+        // Compile the resource
+        //
+        m_Compiler->Compile
+        ( m_CompilerOptions
+        , xresource_pipeline::compiler::base::m_OptimizationType
+        , AtlastResourceGuid
         );
 
+        //
+        // Save Atlas
+        //
+        {
+            xcore::cstring VirtualPath;
+            if (auto Err = CreateVirtualResourcePath(VirtualPath, AtlastResourceGuid); Err)
+                return Err;
+            m_Compiler->SerializeAtlas(VirtualPath.data());
+
+            //
+            // Save the descriptor
+            //
+            xtexture_compiler::descriptor Descriptor;
+
+            xcore::string::Copy(Descriptor.m_Source.m_lPaths.append().m_Color, "Atlas.tga");
+
+            Descriptor.m_Source.m_LinearSpace = true;
+            Descriptor.m_Source.m_Type = xtexture_compiler::descriptor::type::COLOR;
+
+            Descriptor.m_Quality.m_Compression = xtexture_compiler::descriptor::compression::DONT_COMPRESS;
+            Descriptor.m_Quality.m_GenerateMips = true;
+            Descriptor.m_Quality.m_bEnablePerceptualMetrics = false;
+
+            if (auto Err = xtexture_compiler::descriptor::Serialize(Descriptor, xcore::string::Fmt("%s/%s", VirtualPath.data(), xresource_pipeline::resource_descriptor_name_v.data()).data(), false); Err)
+                return Err;
+        }
+
+        //
+        // Save this resource
+        //
         for (auto& T : m_Target)
         {
-            if (T.m_bValid) m_Compiler->Serialize(T.m_DataPath.data());
+            if (T.m_bValid) m_Compiler->Serialize( T.m_DataPath.data() );
         }
 
         return {};
@@ -53,7 +90,7 @@ int main( int argc, const char* argv[] )
         };
         Info.m_ResourceTypes.push_back
         (xresource_pipeline::config::resource_type
-            { .m_FullGuid                = font_pipeline_compiler::full_guid_v
+            { .m_FullGuid                = xfont_compiler::full_guid_v
             , .m_ResourceTypeName        = "xfont"
             , .m_bDefaultSettingInEditor = true
             });

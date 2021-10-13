@@ -521,7 +521,7 @@ struct implementation : instance
 
     //---------------------------------------------------------------------------------------------
 
-    void BuildRuntimeStructure( void )
+    void BuildRuntimeStructure(xcore::guid::rcfull<> AtlasResourceGuid)
     {
         //
         // Count verts and Indices
@@ -576,6 +576,7 @@ struct implementation : instance
         m_Font.m_pIndices   = m_Indices.data();
         m_Font.m_pMesh      = m_Meshes.data();
 
+        m_Font.m_AtlasRcfull = AtlasResourceGuid;
         m_Font.m_nIndices   = static_cast<std::uint32_t>(m_Indices.size());
         m_Font.m_nVertices  = static_cast<std::uint32_t>(m_Vertices.size());
         m_Font.m_nMeshes    = static_cast<std::uint32_t>(m_Meshes.size());
@@ -585,21 +586,35 @@ struct implementation : instance
 
     //---------------------------------------------------------------------------------------------
 
-    virtual void    Compile(const descriptor& Descriptor, xresource_pipeline::compiler::base::optimization_type Optimization) override
+    virtual void    Compile(const descriptor& Descriptor, xresource_pipeline::compiler::base::optimization_type Optimization, xcore::guid::rcfull<> AtlasResourceGuid) override
     {
         FontToSprites(Descriptor, Optimization);
         for(auto& E : m_SpriteList ) CompactifySprite(E);
         SpritesToAtlas();
         ComputeHashTable();
-        BuildRuntimeStructure();
+        BuildRuntimeStructure(AtlasResourceGuid);
     }
 
     //---------------------------------------------------------------------------------------------
 
-    virtual void    Serialize(const std::string_view FilePath) override
+    virtual void SerializeAtlas(const std::string_view PathToTheVirtualResourceAtlas) override
+    {
+        //
+        // Save the atlast
+        //
+        if( auto Err = m_AtlasTexture.SaveTGA( xcore::string::To<wchar_t>(xcore::string::Fmt("%s/Atlas.tga", PathToTheVirtualResourceAtlas.data() )) ); Err )
+            return throw(std::runtime_error("Unable to save the atlas"));
+    }
+
+    //---------------------------------------------------------------------------------------------
+
+    virtual void Serialize( const std::string_view FilePath ) override
     {
         xcore::serializer::stream Stream;
 
+        //
+        // Save actual font resource
+        //
         if( auto Err = Stream.Save( xcore::string::To<wchar_t>(FilePath), m_Font ); Err )
             throw( std::runtime_error("Failed to serialize the font") );
     }

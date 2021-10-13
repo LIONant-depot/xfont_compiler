@@ -226,6 +226,9 @@
     <ClInclude Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_descriptor_base.h" />
     <ClInclude Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_key_base.h" />
     <ClInclude Include="..\..\dependencies\xresource_pipeline\src\xresource_pipeline_tag.h" />
+    <ClInclude Include="..\..\dependencies\xtexture_compiler\src\xtexture_compiler.h" />
+    <ClInclude Include="..\..\dependencies\xtexture_compiler\src\xtexture_compiler_descriptor.h" />
+    <ClInclude Include="..\..\dependencies\xtexture_compiler\src\xtexture_compiler_instance.h" />
     <ClInclude Include="..\..\src\Details\xfont_PerfectHashing.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
