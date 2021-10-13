@@ -1,6 +1,6 @@
 @echo OFF
 setlocal enabledelayedexpansion
-set XFONT_COMPILER_PATH=%cd%
+set XFONT_COMPILER_PATH="%cd%"
 
 rem --------------------------------------------------------------------------------------------------------
 rem Set the color of the terminal to blue with yellow text
@@ -45,6 +45,14 @@ rem ------------------------------------------------------------
 :XRESOURCE_PIPELINE
 rmdir "../dependencies/xresource_pipeline" /S /Q
 git clone https://github.com/LIONant-depot/xresource_pipeline.git "../dependencies/xresource_pipeline"
+if %ERRORLEVEL% GEQ 1 goto :ERROR
+
+rem ------------------------------------------------------------
+rem XTEXTURE_COMPILER
+rem ------------------------------------------------------------
+:XTEXTURE_COMPILER
+rmdir "../dependencies/xtexture_compiler" /S /Q
+git clone https://github.com/LIONant-depot/xtexture_compiler.git "../dependencies/xtexture_compiler"
 if %ERRORLEVEL% GEQ 1 goto :ERROR
 
 rem ------------------------------------------------------------
